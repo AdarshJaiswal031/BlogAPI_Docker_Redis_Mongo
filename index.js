@@ -20,7 +20,7 @@ const {
 const postRouter = require("./routes/postRoutes");
 const userRouter = require("./routes/userRoutes");
 const port = process.env.PORT || 3000;
-const MONGO_URL = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`;
+const MONGO_URL = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/admin?authSource=admin`;
 let redisClient = redis.createClient({
     host: REDIS_URL,
     port: REDIS_PORT
@@ -53,7 +53,7 @@ app.use(session({
     }
 }))
 app.get("/api/v1", (req, res) => {
-    res.send("<h1>Thank you god for 1M subscribers!! Thanks for 11pj</h1>");
+    res.send("<h1>Thank you god for 1M subscribers!! Thanks for 11pj - Thank You God</h1>");
     console.log("thank you god")
 });
 app.use("/api/v1/posts", postRouter);
